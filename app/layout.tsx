@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "BTC — Big Terms & Conditions",
-  description: "Nigeria's social experiment. Earn BTC coins by referring friends and completing tasks.",
+  description: "Earn BTC coins by referring friends and completing tasks on this platform.",
 };
 
 export const viewport: Viewport = {
