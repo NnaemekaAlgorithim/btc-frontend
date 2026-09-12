@@ -21,6 +21,8 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
 
 export const api = {
   register: (body: {
+    first_name: string;
+    last_name: string;
     email: string;
     phone_number: string;
     password: string;
@@ -45,6 +47,8 @@ export const api = {
 
 export interface User {
   id: string;
+  first_name: string;
+  last_name: string;
   email: string;
   phone_number: string;
   btc_balance: string;
@@ -54,6 +58,8 @@ export interface User {
 }
 
 export interface LeaderboardEntry {
+  first_name: string;
+  last_name: string;
   email: string;
   btc_balance: string;
   referral_code: string;
