@@ -48,7 +48,7 @@ export default function DashboardPage() {
     if (navigator.share) {
       await navigator.share({
         title: "Join BTC — Big Terms & Conditions",
-        text: "I'm earning BTC coins on this Nigerian social experiment. Use my link to join and we both earn!",
+        text: "I'm earning BTC coins on this platform. Use my link to join and we both earn!",
         url: referralLink,
       });
     } else {
