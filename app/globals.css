@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-gold:        #D4AF37;
+  --color-gold-light:  #F5D76E;
+  --color-gold-dark:   #A8860C;
+  --color-gold-muted:  rgba(212,175,55,0.12);
+  --color-base:        #09090B;
+  --color-surface:     #111114;
+  --color-card:        #1A1A1F;
+  --color-border:      rgba(212,175,55,0.25);
+  --color-muted:       #52525B;
+  --color-subtle:      #27272A;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: #09090B;
+  color: #F8F8F8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Gold shimmer border utility */
+.gold-card {
+  position: relative;
+  background: #1A1A1F;
+  border-radius: 16px;
+  isolation: isolate;
+}
+.gold-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #D4AF37 0%, #F5D76E 30%, #D4AF37 50%, #A8860C 75%, #D4AF37 100%);
+  background-size: 300% 300%;
+  animation: shimmer-border 4s linear infinite;
+  z-index: -1;
+}
+
+/* Subtle card — muted gold border */
+.subtle-card {
+  background: #1A1A1F;
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 14px;
+}
+
+/* Gold text shimmer */
+.gold-text {
+  background: linear-gradient(90deg, #A8860C, #D4AF37, #F5D76E, #D4AF37, #A8860C);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 3s linear infinite;
+}
+
+/* Balance shimmer glow */
+.balance-glow {
+  text-shadow: 0 0 30px rgba(212,175,55,0.4), 0 0 60px rgba(212,175,55,0.15);
+}
+
+@keyframes shimmer-border {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer-text {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fade-up 0.4s ease both; }
+.fade-up-2 { animation: fade-up 0.4s 0.1s ease both; }
+.fade-up-3 { animation: fade-up 0.4s 0.2s ease both; }
+.fade-up-4 { animation: fade-up 0.4s 0.3s ease both; }
+
+/* Remove tap highlight on mobile */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #09090B; }
+::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 2px; }
+
+/* Input reset */
+input, button { outline: none; }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px #1A1A1F inset;
+  -webkit-text-fill-color: #F8F8F8;
+}
