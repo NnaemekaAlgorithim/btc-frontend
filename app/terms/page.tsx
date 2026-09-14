@@ -1,6 +1,21 @@
-"use client";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions — BTC",
+  description: "Read the full terms and conditions for the BTC platform before creating your account.",
+  openGraph: {
+    title: "Terms & Conditions — BTC",
+    description: "Read the full terms and conditions for the BTC platform before creating your account.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms & Conditions — BTC",
+    description: "Read the full terms and conditions for the BTC platform before creating your account.",
+  },
+};
 
 const sections = [
   {
